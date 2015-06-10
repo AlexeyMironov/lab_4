@@ -31,6 +31,7 @@ BOOST_AUTO_TEST_CASE(ParallelepipedHasDensity)
 BOOST_AUTO_TEST_CASE(ParallelepipedHasVolume)
 {
 	BOOST_CHECK_EQUAL(parallelepiped.GetVolume(), 3 * 5 * 6);
+
 	CBody & parallelepipedAsBody = parallelepiped;
 	BOOST_CHECK_EQUAL(parallelepipedAsBody.GetVolume(), 3 * 5 * 6);
 }
@@ -44,9 +45,11 @@ BOOST_AUTO_TEST_CASE(HasInformation)
 {
 	const std::string info = parallelepiped.GetInformation();
 	std::ostringstream out;
+
 	out << "Parallelepiped: " << std::endl;
 	out << "width: " << parallelepiped.GetWidth() << " , height: " << parallelepiped.GetHeight() << " , depth: " << parallelepiped.GetDepth();
 	out << " , density: " << parallelepiped.GetDensity() << " , volume: " << parallelepiped.GetVolume() << " , massa: " << parallelepiped.GetMass() << std::endl;
+
 	BOOST_CHECK_EQUAL(out.str(), info);
 }
 

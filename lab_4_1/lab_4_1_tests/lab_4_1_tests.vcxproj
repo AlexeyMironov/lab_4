@@ -57,6 +57,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>"$(TargetPath)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -79,11 +82,27 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\lab_4_1\Body.h" />
+    <ClInclude Include="..\lab_4_1\Cone.h" />
+    <ClInclude Include="..\lab_4_1\Cylinder.h" />
+    <ClInclude Include="..\lab_4_1\Parallelepiped.h" />
+    <ClInclude Include="..\lab_4_1\SolidBody.h" />
+    <ClInclude Include="..\lab_4_1\Sphere.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\lab_4_1\Body.cpp" />
+    <ClCompile Include="..\lab_4_1\Cone.cpp" />
+    <ClCompile Include="..\lab_4_1\Cylinder.cpp" />
+    <ClCompile Include="..\lab_4_1\Parallelepiped.cpp" />
+    <ClCompile Include="..\lab_4_1\SolidBody.cpp" />
+    <ClCompile Include="..\lab_4_1\Sphere.cpp" />
+    <ClCompile Include="ConeTest.cpp" />
+    <ClCompile Include="CylinderTests.cpp" />
     <ClCompile Include="lab_4_1_tests.cpp" />
+    <ClCompile Include="ParallelepipedTests.cpp" />
+    <ClCompile Include="SphereTests.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

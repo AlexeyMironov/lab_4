@@ -32,8 +32,8 @@ std::string CCylinder::GetInformation() const
 	std::ostringstream out;
 
 	out << "Cylinder: " << std::endl;
-	out << "Radius: " << m_radius << " Height: " << m_height << " Density: ";
-	out  << GetDensity() << " Volume: " << GetVolume() << " Massa: " << GetMass() << std::endl;
+	out << "Radius: " << m_radius << " , height: " << m_height << " , density: ";
+	out  << GetDensity() << " , volume: " << GetVolume() << " , massa: " << GetMass() << std::endl;
 
 	return out.str();
 }

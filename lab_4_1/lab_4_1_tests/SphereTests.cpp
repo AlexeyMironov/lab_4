@@ -32,6 +32,7 @@ BOOST_AUTO_TEST_CASE(HasVolume)
 {
 	const double EXPECTED_VOLUME = 4 * M_PI / 3 * pow(EXPECTED_RADIUS, 3);
 	BOOST_CHECK_EQUAL(sphere.GetVolume(), EXPECTED_VOLUME);
+
 	CBody & sphereAsBody = sphere;
 	BOOST_CHECK_EQUAL(sphereAsBody.GetVolume(), EXPECTED_VOLUME);
 }
@@ -50,9 +51,11 @@ BOOST_AUTO_TEST_CASE(HasInformation)
 {
 	const std::string info = sphere.GetInformation();
 	std::ostringstream out;
+
 	out << "Sphere: " << std::endl;
 	out << "radius: " << sphere.GetRadius() << " , density: " << sphere.GetDensity();
 	out << " , volume: " << sphere.GetVolume() << " , massa: " << sphere.GetMass() << std::endl;
+
 	BOOST_CHECK_EQUAL(out.str(), info);
 }
 
