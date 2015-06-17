@@ -93,11 +93,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\lab_4_1\Body.cpp" />
+    <ClCompile Include="..\lab_4_1\Compound.cpp" />
     <ClCompile Include="..\lab_4_1\Cone.cpp" />
     <ClCompile Include="..\lab_4_1\Cylinder.cpp" />
     <ClCompile Include="..\lab_4_1\Parallelepiped.cpp" />
     <ClCompile Include="..\lab_4_1\SolidBody.cpp" />
     <ClCompile Include="..\lab_4_1\Sphere.cpp" />
+    <ClCompile Include="CompoundTests.cpp" />
     <ClCompile Include="ConeTest.cpp" />
     <ClCompile Include="CylinderTests.cpp" />
     <ClCompile Include="lab_4_1_tests.cpp" />

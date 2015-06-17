@@ -50,9 +50,6 @@ double CCompound::GetMass() const
 
 double CCompound::GetDensity() const
 {
-	if (m_contents.size() == 0)
-		throw runtime_error("Empty body has no density");
-
 	return (GetMass() / GetVolume());
 }
 
@@ -81,14 +78,9 @@ bool CCompound::HasBodyInside(const CBody *body) const
 string CCompound::GetInformation() const
 {
 	ostringstream out;
-
 	out << "Compound: " << endl;
-	out << "Number of bodies in compount body: " << m_contents.size() << endl;
-	out << "Massa " << GetMass() << ", volume " << GetVolume() << " , density " << GetDensity() << endl;
-
-	out << "Contents:" << endl;
-	for (auto body : m_contents)
-		out << body->GetInformation() << endl;
-
+	out << "Density: " << GetDensity() << ", mass: " << GetMass() << ", volume: " << GetVolume();
 	return out.str();
 }
+
+

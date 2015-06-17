@@ -11,6 +11,7 @@
 #include "Parallelepiped.h"
 #include "Cylinder.h"
 #include "Cone.h"
+#include "Compound.h"
 
 using namespace std;
 
@@ -55,6 +56,29 @@ CBodyPointer CreateCylinder()
 	return make_shared<CCylinder>(radius, height, density);
 }
 
+CBodyPointer AddCompound()
+{
+	cout << "Enter bodies that compound would be consisting of:" << endl;
+
+	shared_ptr<CCompound> compound = make_shared<CCompound>();
+	shared_ptr<CBody> compoundPart;
+
+	while (compoundPart = AddBody())
+	{
+		compound->AddBody(compoundPart);
+	}
+
+	if (compound->GetContentsCount() == 0)
+	{
+		cout << "Cannot add empty compound body" << endl;
+		return nullptr;
+	}
+	else
+	{
+		return compound;
+	}
+}
+
 
 shared_ptr<CBody> AddBody()
 {
@@ -83,7 +107,15 @@ shared_ptr<CBody> AddBody()
 	{
 		body = CreateSphere();
 	}
+	else if (bodyName == "compound")
+	{
+		body = AddCompound();
 
+		if (!body)
+		{
+			body = AddBody();
+		}
+	}
 	else
 	{
 		if (bodyName.empty())
